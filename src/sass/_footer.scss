@@ -1,0 +1,39 @@
+.footer {
+  background-color: $background-light;
+  grid-row: 7/ 8;
+  grid-column: 1/ -1;
+  padding-top: 12rem;
+  display: grid;
+  justify-items: center;
+
+  .logo {
+    @include nav-link;
+    @include logo;
+  }
+  .social-handlers {
+    display: flex;
+
+    .social-handler {
+      border: 1px $primary-color solid;
+      padding: 0.8rem;
+      border-radius: 50%;
+      margin-left: 1rem;
+      outline: none;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+      .footer-icon {
+        width: 1.7rem;
+        height: 1.7rem;
+        fill: $secondary-color;
+      }
+    }
+  }
+  .copyright {
+    font-size: 1.5rem;
+    span {
+      color: $primary-color;
+    }
+  }
+}

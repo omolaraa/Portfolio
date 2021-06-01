@@ -1,0 +1,23 @@
+.button-link {
+  overflow: hidden;
+  width: 14rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  background-image: $gradient-right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $secondary-color;
+  border: none;
+  border-radius: 20rem;
+  transition: all 3s;
+  margin-top: 2rem;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-image: $gradient-left;
+  }
+}

@@ -1,0 +1,77 @@
+@mixin nav-link {
+  text-decoration: none;
+  color: $secondary-color;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@mixin logo {
+  font-weight: bolder;
+  font-size: 3rem;
+  background: $text-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+
+  // &::first-letter {
+  //   color: $secondary-color;
+  // }
+}
+
+@mixin timeline-content {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: $primary-color;
+  border: 4px $background-light solid;
+  box-shadow: 1px 0 20px black;
+  border-radius: 50%;
+  top: 1.5rem;
+}
+
+@mixin timeline-time {
+  position: absolute;
+  top: 2rem;
+}
+
+// @mixin content-tooltip {
+//   content: "";
+//   position: absolute;
+//   width: 0.7rem;
+//   height: 0.7rem;
+//   background-color: $deep-blue;
+//   border-right: 1px $primary-color solid;
+//   border-bottom: 1px $primary-color solid;
+//   bottom: 10rem;
+// }
+ 
+// 1em= 16px
+@mixin respond($breakpoint) {
+  @if $breakpoint == smallest {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    } //500px  (500px/16px = 31.25em)
+  }
+  @if $breakpoint == small {
+    @media only screen and (max-width: 43.75em) {
+      @content;
+    } //700px  (700px/16px = 43.75em)
+  }
+  @if $breakpoint == medium {
+    @media only screen and (max-width: 53.12em) {
+      @content;
+    } //850px  (850px/16px)
+  }
+  @if $breakpoint == large {
+    @media only screen and(max-width: 62.5em) {
+      @content;
+    } //1000
+  }
+
+  @if $breakpoint == largest {
+    @media only screen and(max-width: 68.75em) {
+      @content;
+    } //1100px
+  }
+}

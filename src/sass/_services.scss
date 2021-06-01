@@ -1,0 +1,60 @@
+.services {
+  background-color: $background-light;
+  grid-row: 3/ 4;
+  grid-column: 1/ -1;
+  padding: 15rem 0;
+  display: grid;
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(5rem, 30rem)) minmax(
+      4rem,
+      1fr
+    );
+  grid-template-rows: min-content max-content;
+
+  &-header {
+    grid-row: 1 /2;
+    grid-column: 2/ 6;
+  }
+
+  .service-content {
+    grid-row: 2 /3;
+    grid-column: 2/ 6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 2rem;
+
+    .service {
+      position: relative; 
+      background-color: $background-dark;
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      justify-items: center;
+      transition: all 0.5s;
+      @include respond(large) {
+        padding: 2rem;
+      }
+      @include respond(medium) {
+        padding: 2rem 1.5rem;
+      }
+      @include respond(small) {
+        padding: 2rem 3rem;
+      }
+      &-icon {
+        margin-top: 3rem;
+      }
+
+      .paragraph {
+        font-weight: normal;
+        text-align: center;
+      }
+      &-icon {
+        width: 5rem;
+        height: 5rem;
+        fill: url(#icon-gradient);
+      }
+      &:hover svg {
+        fill: url(#icon-gradient2);
+      }
+    }
+  }
+}
